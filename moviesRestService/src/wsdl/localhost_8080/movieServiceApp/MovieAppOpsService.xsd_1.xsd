@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.3 (RELEASE-2.4.3-ad3323c; 2019-01-21T17:46:06+0000) JAXWS-RI/2.3.2 JAXWS-API/2.3.2 JAXB-RI/2.3.2 JAXB-API/2.3.2 git-revision#unknown. --><xs:schema xmlns:tns="http://services.mycompany.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services.mycompany.com/">
+
+<xs:element name="Exception" type="tns:Exception"/>
+
+<xs:element name="NonexistentEntityException" type="tns:NonexistentEntityException"/>
+
+<xs:element name="deleteVideo" type="tns:deleteVideo"/>
+
+<xs:element name="deleteVideoResponse" type="tns:deleteVideoResponse"/>
+
+<xs:element name="getAdmin" type="tns:getAdmin"/>
+
+<xs:element name="getAdminResponse" type="tns:getAdminResponse"/>
+
+<xs:element name="getStarActor" type="tns:getStarActor"/>
+
+<xs:element name="getStarActorResponse" type="tns:getStarActorResponse"/>
+
+<xs:element name="getStarActors" type="tns:getStarActors"/>
+
+<xs:element name="getStarActorsResponse" type="tns:getStarActorsResponse"/>
+
+<xs:element name="getVideo" type="tns:getVideo"/>
+
+<xs:element name="getVideoResponse" type="tns:getVideoResponse"/>
+
+<xs:element name="getVideos" type="tns:getVideos"/>
+
+<xs:element name="getVideosByType" type="tns:getVideosByType"/>
+
+<xs:element name="getVideosByTypeResponse" type="tns:getVideosByTypeResponse"/>
+
+<xs:element name="getVideosResponse" type="tns:getVideosResponse"/>
+
+<xs:element name="isSessionAuthorized" type="tns:isSessionAuthorized"/>
+
+<xs:element name="isSessionAuthorizedResponse" type="tns:isSessionAuthorizedResponse"/>
+
+<xs:element name="postVideo" type="tns:postVideo"/>
+
+<xs:element name="postVideoResponse" type="tns:postVideoResponse"/>
+
+<xs:element name="putVideo" type="tns:putVideo"/>
+
+<xs:element name="putVideoResponse" type="tns:putVideoResponse"/>
+
+<xs:element name="starActor" type="tns:starActor"/>
+
+<xs:element name="videos" type="tns:videos"/>
+
+<xs:complexType name="deleteVideo">
+<xs:sequence>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteVideoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="NonexistentEntityException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVideosByType">
+<xs:sequence>
+<xs:element name="type" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVideosByTypeResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:videos" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="videos">
+<xs:sequence>
+<xs:element name="genre" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:decimal" minOccurs="0"/>
+<xs:element name="image" type="xs:base64Binary" minOccurs="0"/>
+<xs:element name="starActorFk" type="tns:starActor" minOccurs="0"/>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+<xs:element name="type" type="xs:string" minOccurs="0"/>
+<xs:element name="year" type="xs:integer" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="starActor">
+<xs:sequence>
+<xs:element name="firstname" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:decimal" minOccurs="0"/>
+<xs:element name="lastname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAdmin">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAdminResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getStarActors">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getStarActorsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:starActor" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVideo">
+<xs:sequence>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVideoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:videos" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getStarActor">
+<xs:sequence>
+<xs:element name="id" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getStarActorResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:starActor" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVideos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getVideosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:videos" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="postVideo">
+<xs:sequence>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+<xs:element name="image" type="xs:base64Binary" nillable="true" minOccurs="0"/>
+<xs:element name="genre" type="xs:string" minOccurs="0"/>
+<xs:element name="type" type="xs:string" minOccurs="0"/>
+<xs:element name="year" type="xs:int"/>
+<xs:element name="starActor" type="tns:starActor" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="postVideoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Exception">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="isSessionAuthorized">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="isSessionAuthorizedResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="putVideo">
+<xs:sequence>
+<xs:element name="id" type="xs:decimal" minOccurs="0"/>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+<xs:element name="image" type="xs:base64Binary" nillable="true" minOccurs="0"/>
+<xs:element name="genre" type="xs:string" minOccurs="0"/>
+<xs:element name="type" type="xs:string" minOccurs="0"/>
+<xs:element name="year" type="xs:int"/>
+<xs:element name="starActor" type="tns:starActor" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="putVideoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
